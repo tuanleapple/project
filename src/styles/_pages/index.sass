@@ -1,0 +1,95 @@
+body
+	font-family: Roboto
+.home-background
+	.owl-carousel
+		.item
+			img 
+				width: 100%
+			.title
+				+pad(1rem null)
+				margin-bottom: 0
+
+	+media-breakpoint-up(md)
+			.owl-carousel	
+				.item	
+					position: relative
+					.title									
+						position: absolute
+						top: 0
+						width: 100%
+						height: 100%
+						left: 0
+						justify-content: center
+						display: flex
+						color: white
+						align-items: center
+						h1 
+							+fz(2.5rem)
+						p
+							+fz(1.5rem)
+							max-width: 60%
+
+
+
+							
+
+.home
+	+pad (2rem null)
+	a.item 
+		text-decoration: none
+		figure 
+			.blocking 
+				position: relative
+				+bor-rad(10px)
+				overflow: hidden
+				.eye
+					position: absolute
+					top: 0
+					justify-content: center
+					align-items: center
+					display: flex
+					width: 100%
+					height: 100%
+					font-size: 3rem
+					color: #fff	
+					
+					transition: .5s ease-in-out all
+					em 
+						z-index: 999
+				&:after
+					content: ''
+					display: block
+					width: 100%
+					height: 100%
+					background: rgba($black,.6)
+					+pos(abs,0 0 null null)
+					transition: .5s ease-in-out all
+			figcaption
+				+pad(1rem null)
+				h3 
+					margin-bottom: 0
+					+fz(1.2rem)
+			time 
+				+fz(.85rem)
+				color: darken($white,30%)
+			p 
+				+mar(.5rem null 0 null)
+				color: darken($white,30%)
+	+media-breakpoint-up(md)
+		a.item
+			figure 
+				.blocking
+					&:after
+						top: 100%
+					.eye
+						opacity: 0
+			&:hover
+				figure 
+					.blocking 
+						p
+							color: #563d7c
+						&:after 
+							top: 0
+						.eye
+							opacity: 1
+
